@@ -1,89 +1,74 @@
-print("МЕНЮ ЗАВДАНЬ XD")
-print("1 всі числа в діапазоні")
-print("2 всі непарні числа")
-print("3 всі парні числа (спадання)")
-print("4 числа за вибором порядку (1-зростання, 2-спадання)")
-print("5 непарні числа з нормалізацією меж")
-print("6 парні (зростання) та непарні (спадання) з нормалізацією")
-print("0 вихід")
-print("..........")
+print("МЕНЮ ЗАВДАНЬ XDDDD мармурову яловичину попрошу....")
+print("1. Всі числа  2. Непарні  3. Парні (спадання)")
+print("4. Порядок на вибір  5. Непарні (нормалізація)  6. Парні/Непарні")
+print("0. Вихід")
+print(".........")
 
-nomer_zavdannya = int(input("оберіть номер завдання: "))
+task = int(input("Оберіть номер завдання: "))
 
-# Завдання 1
-if nomer_zavdannya == 1:
-    print("Завдання 1")
-    pochatok = int(input("Введіть початок: "))
-    kinec = int(input("Введіть кінець: "))
-    for chislo in range(pochatok, kinec + 1):
-        print(chislo, end=" ")
+if task == 0:
+    print("Вихід.")
 
-# Завдання 2
-elif nomer_zavdannya == 2:
-    print("Завдання 2")
-    pochatok = int(input("Введіть початок: "))
-    kinec = int(input("Введіть кінець: "))
-    for chislo in range(pochatok, kinec + 1):
-        if chislo % 2 != 0:
-            print(chislo, end=" ")
+elif task == 1: # Завдання 1
+    start = int(input("Початок: "))
+    end = int(input("Кінець: "))
+    for number in range(start, end + 1):
+        print(number, end=" ")
 
-# Завдання 3
-elif nomer_zavdannya == 3:
-    print("Завдання 3")
-    pochatok = int(input("Введіть початок: "))
-    kinec = int(input("Введіть кінець: "))
-    for chislo in range(kinec, pochatok - 1, -1):
-        if chislo % 2 == 0:
-            print(chislo, end=" ")
+elif task == 2: # Завдання 2
+    start = int(input("Початок: "))
+    end = int(input("Кінець: "))
+    for number in range(start, end + 1):
+        if number % 2 != 0:
+            print(number, end=" ")
 
-# Завдання 4
-elif nomer_zavdannya == 4:
-    print("Завдання 4")
-    pochatok = int(input("Введіть початок: "))
-    kinec = int(input("Введіть кінець: "))
-    poryadok = int(input("Оберіть порядок (1 - зростання, 2 - спадання): "))
-    if poryadok == 1:
-        for chislo in range(pochatok, kinec + 1):
-            print(chislo, end=" ")
-    elif poryadok == 2:
-        for chislo in range(kinec, pochatok - 1, -1):
-            print(chislo, end=" ")
+elif task == 3: # Завдання 3
+    start = int(input("Початок: "))
+    end = int(input("Кінець: "))
+    for number in range(end, start - 1, -1):
+        if number % 2 == 0:
+            print(number, end=" ")
 
-# Завдання 5
-elif nomer_zavdannya == 5:
-    print("Завдання 5")
-    a = int(input("Введіть перше число: "))
-    b = int(input("Введіть друге число: "))
-    if a > b:
-        pochatok, kinec = b, a
+elif task == 4: # Завдання 4
+    start = int(input("Початок: "))
+    end = int(input("Кінець: "))
+    choice = int(input("1 - зростання, 2 - спадання: "))
+    if choice == 1:
+        for number in range(start, end + 1):
+            print(number, end=" ")
     else:
-        pochatok, kinec = a, b
-    for chislo in range(pochatok, kinec + 1):
-        if chislo % 2 != 0:
-            print(chislo, end=" ")
+        for number in range(end, start - 1, -1):
+            print(number, end=" ")
 
-# Завдання 6
-elif nomer_zavdannya == 6:
-    print("Завдання 6")
-    a = int(input("Введіть перше число: "))
-    b = int(input("Введіть друге число: "))
-    if a > b:
-        pochatok, kinec = b, a
+elif task == 5: # Завдання 5
+    num1 = int(input("Число 1: "))
+    num2 = int(input("Число 2: "))
+    if num1 > num2:
+        start, end = num2, num1
     else:
-        pochatok, kinec = a, b
+        start, end = num1, num2
     
-    print("Парні (зростання):")
-    for chislo in range(pochatok, kinec + 1):
-        if chislo % 2 == 0:
-            print(chislo, end=" ")
-    
-    print("\nНепарні (спадання):")
-    for chislo in range(kinec, pochatok - 1, -1):
-        if chislo % 2 != 0:
-            print(chislo, end=" ")
+    for number in range(start, end + 1):
+        if number % 2 != 0:
+            print(number, end=" ")
 
-elif nomer_zavdannya == 0:
-    print("Завершення роботи")
+elif task == 6: # Завдання 6
+    num1 = int(input("Число 1: "))
+    num2 = int(input("Число 2: "))
+    if num1 > num2:
+        start, end = num2, num1
+    else:
+        start, end = num1, num2
+
+    print("Парні:")
+    for number in range(start, end + 1):
+        if number % 2 == 0:
+            print(number, end=" ")
+    
+    print("\nНепарні:")
+    for number in range(end, start - 1, -1):
+        if number % 2 != 0:
+            print(number, end=" ")
 
 else:
-    print("Такого завдання немає")
+    print("Помилка.")
