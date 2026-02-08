@@ -1,65 +1,86 @@
-# number = int(input('Введіть число: '))
+#задание1 считаем количество букв и цифр в строке
 
-# number = int('10')
-# print(type(number))
+text = input("введите строку: ")
 
-# float()
-# str()
-# bool()
+letters = 0
+digits = 0
 
-# print(range(5)) # 0 1 2 3 4
-# print(range(3, 8)) # 3 4 5 6 7
-# print(range(3, 10, 3)) # 3 6 9
-# r = range(10)
-# print(type(r))
+for ch in text:
+    if ch.isalpha():
+        letters += 1
+    elif ch.isdigit():
+        digits += 1
 
-#count = int(input('Скільки разів повторити цикл? '))
+print("количество букв:", letters)
+print("количество цифр:", digits)
 
-# counter = 0
-# while counter < count:
-#     print(counter)
-#     counter += 1
+print("-" * 30)
 
-# for i in range(count):
-#     if i == 100:
-#         break
-#     if i % 5 == 0:
-#         continue
-#     print(i, end=' ')
-# else:
-#     print('Діапазон закінчився')
+#задение2 считаем сколько раз символ встречается в строке
 
-# num = 10
+text = input("введите строку: ")
+symbol = input("введите символ для поиска: ")
 
-# for i in range(5):
-#     print(f'i = {i}')
-#     for j in range(4):
-#         print(f'\tj = {j}')
-#         print('\t\t', end='')
-#         for k in range(2):
-#             print(f'k = {k}', end=' ')
-#         print()
-#     print()
+count = 0
 
-# counter_outer = 0
-# while counter_outer < 5:
-#     print(counter_outer)
-#     counter_inner = 0
-#     while counter_inner < 4:
-#         print(counter_inner, end=' ')
-#         counter_inner += 1
-#     print()
-#     counter_outer += 1
+for ch in text:
+    if ch == symbol:
+        count += 1
 
-import random
+print("символ встречается", count, "раз")
 
-random_number = random.randint(10, 50)
+print("-" * 30)
 
-print(random_number)
+#задание3 переворачиваем строку без использования срезов
 
-randint = 10
+text = input("введите строку: ")
 
-from random import randint
+reversed_text = ""
 
-randint = 12
-random_number = randint(10, 50)
+for ch in text:
+    reversed_text = ch + reversed_text
+
+print("перевернутая строка:", reversed_text)
+
+print("-" * 30)
+
+#задание4 считаем сколько раз слово встречается в строке
+
+text = input("введите строку: ")
+search_word = input("введите слово для поиска: ")
+
+words = text.split()
+count = 0
+
+for word in words:
+    if word == search_word:
+        count += 1
+
+print("слово встречается", count, "раз")
+
+print("-" * 30)
+
+#запание5 заменяем одно слово на другое в строке
+
+text = input("введите строку: ")
+old_word = input("введите слово для поиска: ")
+new_word = input("введите слово для замены: ")
+
+result = text.replace(old_word, new_word)
+
+print("результат:", result)
+
+print("-" * 30)
+
+#задание6 находим самое длинное слово в строке
+
+text = input("введите строку: ")
+
+words = text.split()
+longest_word = words[0]
+
+for word in words:
+    if len(word) > len(longest_word):
+        longest_word = word
+
+print("самое длинное слово:", longest_word)
