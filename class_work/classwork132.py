@@ -1,86 +1,85 @@
-#задание1 считаем количество букв и цифр в строке
-
-text = input("введите строку: ")
+# задание 1
+s = input("введи строку: ")
 
 letters = 0
 digits = 0
 
-for ch in text:
-    if ch.isalpha():
+for i in s:
+    if i >= 'a' and i <= 'z' or i >= 'A' and i <= 'Z':
         letters += 1
-    elif ch.isdigit():
+    if i >= '0' and i <= '9':
         digits += 1
 
-print("количество букв:", letters)
-print("количество цифр:", digits)
+print("буквы:", letters)
+print("цифры:", digits)
 
-print("-" * 30)
 
-#задение2 считаем сколько раз символ встречается в строке
-
-text = input("введите строку: ")
-symbol = input("введите символ для поиска: ")
+# задание 2
+x = input("введи символ: ")
 
 count = 0
-
-for ch in text:
-    if ch == symbol:
+for i in s:
+    if i == x:
         count += 1
 
-print("символ встречается", count, "раз")
+print("символ встречается:", count)
 
-print("-" * 30)
 
-#задание3 переворачиваем строку без использования срезов
+# задание 3
+rev = ""
+for i in s:
+    rev = i + rev
 
-text = input("введите строку: ")
+print("перевёрнутая строка:", rev)
 
-reversed_text = ""
 
-for ch in text:
-    reversed_text = ch + reversed_text
+# задание 4
+w = input("введи слово для поиска: ")
 
-print("перевернутая строка:", reversed_text)
-
-print("-" * 30)
-
-#задание4 считаем сколько раз слово встречается в строке
-
-text = input("введите строку: ")
-search_word = input("введите слово для поиска: ")
-
-words = text.split()
 count = 0
+word = ""
 
-for word in words:
-    if word == search_word:
-        count += 1
+for i in s + " ":
+    if i != " ":
+        word += i
+    else:
+        if word == w:
+            count += 1
+        word = ""
 
-print("слово встречается", count, "раз")
+print("слово встречается:", count)
 
-print("-" * 30)
 
-#запание5 заменяем одно слово на другое в строке
+# задание 5
+old = input("слово для замены: ")
+new = input("новое слово: ")
 
-text = input("введите строку: ")
-old_word = input("введите слово для поиска: ")
-new_word = input("введите слово для замены: ")
+result = ""
+word = ""
 
-result = text.replace(old_word, new_word)
+for i in s + " ":
+    if i != " ":
+        word += i
+    else:
+        if word == old:
+            result += new + " "
+        else:
+            result += word + " "
+        word = ""
 
-print("результат:", result)
+print("после замены:", result)
 
-print("-" * 30)
 
-#задание6 находим самое длинное слово в строке
+# задание 6
+longest = ""
+word = ""
 
-text = input("введите строку: ")
+for i in s + " ":
+    if i != " ":
+        word += i
+    else:
+        if len(word) > len(longest):
+            longest = word
+        word = ""
 
-words = text.split()
-longest_word = words[0]
-
-for word in words:
-    if len(word) > len(longest_word):
-        longest_word = word
-
-print("самое длинное слово:", longest_word)
+print("самое длинное слово:", longest)
