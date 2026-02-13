@@ -1,65 +1,85 @@
-# number = int(input('Введіть число: '))
+#задание 1
+s = input("введи строку: ")
 
-# number = int('10')
-# print(type(number))
+letters = 0
+digits = 0
 
-# float()
-# str()
-# bool()
+for i in s:
+    if i >= 'a' and i <= 'z' or i >= 'A' and i <= 'Z':
+        letters += 1
+    if i >= '0' and i <= '9':
+        digits += 1
 
-# print(range(5)) # 0 1 2 3 4
-# print(range(3, 8)) # 3 4 5 6 7
-# print(range(3, 10, 3)) # 3 6 9
-# r = range(10)
-# print(type(r))
+print("буквы:", letters)
+print("цифры:", digits)
 
-#count = int(input('Скільки разів повторити цикл? '))
 
-# counter = 0
-# while counter < count:
-#     print(counter)
-#     counter += 1
+#задание 2
+x = input("введи символ: ")
 
-# for i in range(count):
-#     if i == 100:
-#         break
-#     if i % 5 == 0:
-#         continue
-#     print(i, end=' ')
-# else:
-#     print('Діапазон закінчився')
+count = 0
+for i in s:
+    if i == x:
+        count += 1
 
-# num = 10
+print("символ встречается:", count)
 
-# for i in range(5):
-#     print(f'i = {i}')
-#     for j in range(4):
-#         print(f'\tj = {j}')
-#         print('\t\t', end='')
-#         for k in range(2):
-#             print(f'k = {k}', end=' ')
-#         print()
-#     print()
 
-# counter_outer = 0
-# while counter_outer < 5:
-#     print(counter_outer)
-#     counter_inner = 0
-#     while counter_inner < 4:
-#         print(counter_inner, end=' ')
-#         counter_inner += 1
-#     print()
-#     counter_outer += 1
+#задание 3
+rev = ""
+for i in s:
+    rev = i + rev
 
-import random
+print("перевернутая строка:", rev)
 
-random_number = random.randint(10, 50)
 
-print(random_number)
+#задание 4
+w = input("введи слово для поиска: ")
 
-randint = 10
+count = 0
+word = ""
 
-from random import randint
+for i in s + " ":
+    if i != " ":
+        word += i
+    else:
+        if word == w:
+            count += 1
+        word = ""
 
-randint = 12
-random_number = randint(10, 50)
+print("слово встречается:", count)
+
+
+#задание 5
+old = input("слово для замены: ")
+new = input("новое слово: ")
+
+result = ""
+word = ""
+
+for i in s + " ":
+    if i != " ":
+        word += i
+    else:
+        if word == old:
+            result += new + " "
+        else:
+            result += word + " "
+        word = ""
+
+print("после замены:", result)
+
+
+#задание 6
+longest = ""
+word = ""
+
+for i in s + " ":
+    if i != " ":
+        word += i
+    else:
+        if len(word) > len(longest):
+            longest = word
+        word = ""
+
+print("самое длинное слово:", longest)
