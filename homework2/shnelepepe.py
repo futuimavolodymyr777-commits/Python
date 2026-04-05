@@ -1,12 +1,12 @@
 import math
 
-# студент типа объект с оценками
+#студент типа объект с оценками
 class Student:
     def __init__(self, name, surname, age):
         self.name = name
         self.surname = surname
         self.age = age
-        self.grades = []  # тут оценки лежат
+        self.grades = []  #тут оценки лежат
 
     def __str__(self):
         return f"{self.name} {self.surname}, {self.age} лет"
@@ -15,14 +15,14 @@ class Student:
         if self.grades:
             print("оценки:", self.grades)
         else:
-            print("оценок нет пока")  # пусто
+            print("оценок нет пока")  #пусто
 
     def add_grade(self, grade):
         self.grades.append(grade)
-        print("добавили оценку")  # закинули оценку
+        print("добавили оценку")  #закинули оценку
 
 
-# тачка просто инфа
+#тачка просто инфа
 class Car:
     def __init__(self, brand, model, speed, year):
         self.brand = brand
@@ -34,53 +34,53 @@ class Car:
         return f"{self.brand} {self.model} ({self.year}), {self.speed} км/ч"
 
     def show_info(self):
-        print(self)  # выводим как есть
+        print(self)  #выводим как есть
 
 
-# круг
+#круг
 class Circle:
     def __init__(self, radius):
-        self.radius = radius  # радиус
+        self.radius = radius  #радиус
 
     def area(self):
-        return math.pi * self.radius ** 2  # площадь
+        return math.pi * self.radius ** 2  #площадь
 
     def perimeter(self):
-        return 2 * math.pi * self.radius  # длина круга
+        return 2 * math.pi * self.radius  #длина круга
 
 
-# прямоугольник
+#прямоугольник
 class Rectangle:
     def __init__(self, a, b):
         self.a = a
-        self.b = b  # стороны
+        self.b = b  #стороны
 
     def area(self):
-        return self.a * self.b  # a*b
+        return self.a * self.b  #a*b
 
     def perimeter(self):
-        return 2 * (self.a + self.b)  # обводка
+        return 2 * (self.a + self.b)  #обводка
 
 
-# треугольник
+#треугольник
 class Triangle:
     def __init__(self, a, b, c):
         self.a = a
         self.b = b
-        self.c = c  # 3 стороны
+        self.c = c  #3 стороны
 
     def perimeter(self):
-        return self.a + self.b + self.c  # сложили
+        return self.a + self.b + self.c  #сложили
 
     def area(self):
-        p = self.perimeter() / 2  # половина периметра
-        return math.sqrt(p * (p - self.a) * (p - self.b) * (p - self.c))  # герон
+        p = self.perimeter() / 2  #половина периметра
+        return math.sqrt(p * (p - self.a) * (p - self.b) * (p - self.c))  #герон
 
 
-# главный движ
+#главный движ
 def main():
     student = Student("Volodymyr", "Futuima", 16)
-    car = Car("BMW", "M5", 305, 2022)  # норм бэха
+    car = Car("BMW", "M5", 305, 2022)  #норм бэха
 
     while True:
         print("\nменю")
@@ -102,14 +102,14 @@ def main():
                 c = input("выбор: ")
 
                 if c == "1":
-                    print(student)  # инфа
+                    print(student)  #инфа
                 elif c == "2":
                     g = int(input("оценка: "))
-                    student.add_grade(g)  # добавили
+                    student.add_grade(g)  #добавили
                 elif c == "3":
-                    student.show_grades()  # смотрим
+                    student.show_grades()  #смотрим
                 elif c == "0":
-                    break  # назад
+                    break  #назад
 
         elif choice == "2":
             print(car)
@@ -147,12 +147,12 @@ def main():
                     print("периметр:", obj.perimeter())
 
                 elif c == "0":
-                    break  # назад
+                    break  #назад
 
         elif choice == "0":
             print("пока")
             break
 
 
-# запуск
+#запуск
 main()
